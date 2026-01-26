@@ -1,0 +1,18 @@
+:root {
+    --backgroud-color: #FFFBF8;
+    --font-color: #242424;
+    --nav-color: #7FA3D1;
+}
+
+table {
+    border-collapse: collapse;
+    width: 70%;
+    min-width: fit-content;
+}
+
+th, td {
+    border: 1px solid var(--font-color);
+    padding: 8px;
+    text-align: center;
+    color: var(--font-color)
+}
