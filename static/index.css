@@ -4,8 +4,8 @@
 :root {
     --backgroud-color: #FFFBF8;
     --font-color: #242424;
-    --nav-color: #7FA3D1;
     --button-color: #5A82C3;
+    --shadow-color: #24242459;
 }
 
 /* Constant stylings */
@@ -27,8 +27,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
 }
-
 /* Button styling */
 button {
     position: relative;
@@ -77,7 +77,75 @@ button:hover{
 }
 
 .titleCard h2 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+#productTitle {
+    margin: 430px 0px 0px 0px;
+    width: 72%;
+    text-align: left;
+}
+
+.products {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.productCard {
+    width: 400px;
+    height: 470px;
+    border: 1px solid var(--shadow-color);
+    box-shadow: 0px 2px 8px 2px var(--shadow-color);
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.productCard img {
+    width: 400px;
+    height: 250px;
+}
+
+.productCard h3 {
+    padding: 0px 0px 0px 10px;
+}
+
+.productCard p {
+    height: 80px;
+    padding: 10px;
+}
+
+.productCard strong {
+    padding: 10px;
+}
+
+.consultationCard {
+    margin-top: 80px;
+}
+
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--font-color);
+    height: 200px;
+}
+
+footer h1 {
+    color: var(--backgroud-color);
+    margin-left: 100px;
+}
+
+footer img {
+    height: 200px;
+    margin-right: 100px;
 }
 

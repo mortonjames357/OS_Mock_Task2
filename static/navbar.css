@@ -3,7 +3,6 @@
 :root {
     --backgroud-color: #FFFBF8;
     --font-color: #242424;
-    --nav-color: #7FA3D1;
 }
 
 a {
@@ -13,10 +12,10 @@ a {
 }
 
 nav {
-    background-color: var(--nav-color);
+    background-color: var(--font-color);
     padding: 10px 40px 10px 40px;
     display: flex;
     gap: 15px;
-    width: 99vw;
+    width: 96vw;
     
 }
