@@ -1,4 +1,5 @@
 import sqlite3
+import bcrypt
 
 DB_PATH = './database/database.db'
 
@@ -34,9 +35,13 @@ def create_user(username, email, password):
     try:
         with sqlite3.connect(DB_PATH) as conn:
             cursor = conn.cursor()
-            cursor.execute("PRAGMA foreign_keys = ON;")
 
-            cursor.execute("INSERT INTO users (username, email, password) VALUES (?, ?, ?)", (username, email, password,))
+            password = password.encode('utf-8')
+            hashed_pw = bcrypt.hashpw(password, bcrypt.gensalt())
+
+            cursor.execute("PRAGMA foreign_keys = ON;")
+            
+            cursor.execute("INSERT INTO users (username, email, password) VALUES (?, ?, ?)", (username, email, hashed_pw,))
             conn.commit()
     except sqlite3.Error as e:
         print(f"Error creating user: {e}")
@@ -52,3 +57,9 @@ def delete_user(user_id):
     except sqlite3.Error as e:
         print(f"Error deleting user: {e}")
 
+
+username = "testuser1"
+email = "testuser1@example.com"
+password = "securepassword"
+
+create_user(username, email, password)
