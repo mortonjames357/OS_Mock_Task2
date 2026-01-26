@@ -75,3 +75,6 @@ def seed_DB():
         print(f"An error occurred: {e}")
 
         
+def start_database():
+    setup_DB()
+    seed_DB()
