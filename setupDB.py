@@ -36,6 +36,7 @@ def setup_DB():
             CREATE TABLE IF NOT EXISTS bookings (
                 booking_id INTEGER PRIMARY KEY AUTOINCREMENT,
                 user_id INTEGER,
+                address TEXT,
                 booking_date TEXT NOT NULL,
                 booking_time TEXT NOT NULL,
                 booking_type TEXT NOT NULL,

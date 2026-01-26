@@ -1,0 +1,3 @@
+Put passwords in a hashset
+Create an appointment table for appointments with salesmen about products
+Create a page that has a carbon footprint calculator

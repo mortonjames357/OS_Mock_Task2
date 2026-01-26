@@ -8,7 +8,7 @@ def get_all_users():
             cursor = conn.cursor()
             cursor.execute("PRAGMA foreign_keys = ON;")
             
-            cursor.execute("SELECT user_id, username, email FROM users")
+            cursor.execute("SELECT * FROM users")
             users = cursor.fetchall()
             
         return users
@@ -22,7 +22,7 @@ def get_user_by_id(user_id):
             cursor = conn.cursor()
             cursor.execute("PRAGMA foreign_keys = ON;")
             
-            cursor.execute("SELECT user_id, username, email FROM users WHERE user_id = ?", (user_id,))
+            cursor.execute("SELECT * FROM users WHERE user_id = ?", (user_id,))
             user = cursor.fetchone()
             
         return user
