@@ -41,8 +41,18 @@ def view_all():
 
 
 
-@app.route('/create_booking', methods=['GET', 'POST'])
-def create_booking():
+@app.route('/create_booking_page', methods=['GET', 'POST'])
+def create_booking_page():
+    if request.method == 'POST':
+        user_id = request.form.get('user_id')
+        address = request.form.get('address')
+        date = request.form.get('date')
+        time = request.form.get('time')
+        booking_type = request.form.get('bookingType')
+        booking_status = request.form.get('bookingStatus')
+        tech_id = request.form.get('techID')
+
+        create_booking(user_id, address, date, time, booking_type, booking_status, tech_id)
     return render_template('create_booking.html')
 
 
