@@ -38,7 +38,7 @@ def create_user(username, email, password):
 
             cursor.execute("INSERT INTO users (username, email, password) VALUES (?, ?, ?)", (username, email, password,))
             conn.commit()
-    except sqlite3.IntegrityError as e:
+    except sqlite3.Error as e:
         print(f"Error creating user: {e}")
 
 def delete_user(user_id):
