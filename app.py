@@ -23,13 +23,31 @@ def view_all():
 
     if request.method == 'POST':
         action = request.form.get('action')
-        
+
         if action == 'ViewBookings':
             bookings = get_all_bookings()
+            
         elif action == 'ViewUsers':
             users = get_all_users()
+            
         elif action == 'ViewTechnicians':
             technicians = get_all_techs()
+
+        elif action == 'Delete':
+            delete_type = request.form.get('deleteType')
+            id_input = request.form.get('idInput')
+            
+            if delete_type == 'Booking':
+                delete_booking(id_input)
+                bookings = get_all_bookings()
+            elif delete_type == 'User':
+                delete_user(id_input)
+                users = get_all_users()
+            elif delete_type == 'Technician':
+                delete_tech(id_input)
+                technicians = get_all_techs()
+    else:
+        bookings = get_all_bookings()
 
     return render_template(
         'view_all.html', 
@@ -37,6 +55,7 @@ def view_all():
         users=users, 
         technicians=technicians
     )
+
 
 
 

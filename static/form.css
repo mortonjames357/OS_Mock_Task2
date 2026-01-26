@@ -55,3 +55,11 @@ label {
     flex-direction: row;
     margin: 50px 0px 0px 0px;
 }
+
+#viewForm button{
+    margin: 5px;
+}
+
+#deleteForm{
+    margin-top: 100px;
+}

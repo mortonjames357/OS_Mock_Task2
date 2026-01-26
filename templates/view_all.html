@@ -102,16 +102,15 @@
         </table>
     {% endif %}
 
-    <form method="POST">
+    <form method="POST" id="deleteForm">
         <select name="deleteType" id="">
             <option value="Booking">Booking</option>
             <option value="User">User</option>
             <option value="Technician">Technician</option>
         </select>
         <label for="idInput">Input ID:</label>
-        <input type="text" name="idInput">
+        <input type="number" name="idInput">
+        <button type="submit" name="action" value="Delete">Delete</button>
     </form>
-
-
 </body>
 </html>
