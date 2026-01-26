@@ -5,6 +5,7 @@
     --backgroud-color: #FFFBF8;
     --font-color: #242424;
     --nav-color: #7FA3D1;
+    --button-color: #5A82C3;
 }
 
 /* Constant stylings */
@@ -22,4 +23,50 @@ body {
     padding: 0;
     background-color: var(--backgroud-color);
     color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button styling */
+button {
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    background: none;
+    border: 2px solid var(--button-color);
+    color: var(--font-color);
+    font-weight: 600;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 1;
+    transition: all .4s ease;
+}
+
+button::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--button-color);
+    z-index: -1;
+    transition: all .4s ease;
+}
+
+button:hover::before{
+    width: 100%;
+}
+
+button:hover{
+    color: var(--backgroud-color);
+}
+
+
+/* Form styling */
+form {
+    margin-top: 50px;
 }
