@@ -1,15 +1,20 @@
+#Imports
 import os
 import sqlite3
 
+# Constants
 DB_PATH = './database/app_database.db'
 SEED_PATH = './database/seed.sql'
 
-def steup_db():
+# Function to set up the database
+def setup_db():
+     # Creating connecting to the database
      with sqlite3.connect(DB_PATH) as conn:
         cursor = conn.cursor()
 
         cursor.execute("PRAGMA foreign_keys = ON;")
 
+        # Creating user table
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS users (
                 user_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -18,6 +23,7 @@ def steup_db():
                 password TEXT NOT NULL
             )""")
         
+        # Creating bookings table
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS bookings (
                 booking_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -30,6 +36,7 @@ def steup_db():
                 FOREIGN KEY (user_id) REFERENCES users(user_id)
             )""")
         
+        # Creating technicians table
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS technicians (
                 technican_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -39,6 +46,23 @@ def steup_db():
         
         conn.commit()
 
+# Function to seed the database
+def seed_DB():
+    # Connecting to the db
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.cursor()
+        cursor.execute("PRAGMA foreign_keys = ON;")
 
-def seed_DB()
+        # Check if the users table already has data
+        cursor.execute("SELECT COUNT(*) FROM users")
+        if cursor.fetchone()[0] > 0:
+            print("Database already seeded. Skipping seeding process.")
+            return
+
+        # Read and execute the seed SQL file
+        with open(SEED_PATH, 'r') as f:
+            seed_sql = f.read()
+            
+        cursor.executescript(seed_sql)
+        conn.commit()
         
