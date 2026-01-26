@@ -58,8 +58,6 @@ def view_all():
 
 
 
-
-
 @app.route('/create_booking_page', methods=['GET', 'POST'])
 def create_booking_page():
     if request.method == 'POST':
@@ -73,6 +71,34 @@ def create_booking_page():
 
         create_booking(user_id, address, date, time, booking_type, booking_status, tech_id)
     return render_template('create_booking.html')
+
+
+
+@app.route('/view_specific', methods=['GET', 'POST'])
+def view_specific():
+    booking = None
+    user = None
+    tech = None
+
+    if request.method == 'POST':
+        id_input = request.form.get('idInput')
+        entity_type = request.form.get('entityType')
+
+        if entity_type == 'Booking':
+            booking = get_booking_by_id(id_input)
+        elif entity_type == 'User':
+            user = get_user_by_id(id_input)
+        elif entity_type == 'Technician':
+            tech = get_tech_by_id(id_input)
+            
+    return render_template(
+        'view_specific.html', 
+        booking=booking, 
+        user=user, 
+        tech=tech
+    )
+
+
 
 
 
