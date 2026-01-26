@@ -18,9 +18,17 @@ def setup_DB():
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS users (
                 user_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                username TEXT UNIQUE NOT NULL,
-                email TEXT UNIQUE NOT NULL,
+                username TEXT NOT NULL,
+                email TEXT NOT NULL,
                 password TEXT NOT NULL
+            )""")
+        
+        # Creating technicians table
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS technicians (
+                technican_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL,
+                department TEXT NOT NULL
             )""")
         
         # Creating bookings table
@@ -37,13 +45,8 @@ def setup_DB():
                 FOREIGN KEY (technican_id) REFERENCES technicians(technican_id)
             )""")
         
-        # Creating technicians table
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS technicians (
-                technican_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
-                department TEXT NOT NULL
-            )""")
+        
+        
         
         conn.commit()
 

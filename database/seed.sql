@@ -1,11 +1,11 @@
 INSERT INTO users
-(user_id, username, email, password)
+(username, email, password)
 VALUES
-(1, 'admin', 'admin@example.com', 'admin123'),
-(2, 'user1', 'user1@example.com', 'password1'),
-(3, 'user2', 'user2@example.com', 'password2'),
-(4, 'user3', 'user3@example.com', 'password3'),
-(5, 'user4', 'user4@example.com', 'password4');
+('admin', 'admin@example.com', 'admin123'),
+('user1', 'user1@example.com', 'password1'),
+('user2', 'user2@example.com', 'password2'),
+('user3', 'user3@example.com', 'password3'),
+('user4', 'user4@example.com', 'password4');
 
 INSERT INTO technicians
 (technican_id, name, department)
