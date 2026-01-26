@@ -6,6 +6,8 @@
     <title>Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='table.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
 </head>
 <body>
     <nav>
@@ -15,7 +17,7 @@
         <a href="{{ url_for('view_specific') }}">View Specific</a>
     </nav>
 
-    <form method="POST">
+    <form method="POST" id="viewSpecificForm">
         <select name="entityType" id="">
             <option value="Booking">Booking</option>
             <option value="User">User</option>

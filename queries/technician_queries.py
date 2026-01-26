@@ -22,7 +22,7 @@ def get_tech_by_id(tech_id):
             cursor = conn.cursor()
             cursor.execute("PRAGMA foreign_keys = ON;")
 
-            cursor.execute("SELECT * FROM technicians WHERE technician_id=?", (tech_id,))
+            cursor.execute("SELECT * FROM technicians WHERE technican_id=?", (tech_id,))
             tech = cursor.fetchall()
 
         return tech

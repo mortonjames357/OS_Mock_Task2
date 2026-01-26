@@ -23,7 +23,7 @@ def get_user_by_id(user_id):
             cursor.execute("PRAGMA foreign_keys = ON;")
             
             cursor.execute("SELECT * FROM users WHERE user_id = ?", (user_id,))
-            user = cursor.fetchone()
+            user = cursor.fetchall()
             
         return user
     except sqlite3.Error as e:

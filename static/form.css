@@ -56,10 +56,30 @@ label {
     margin: 50px 0px 0px 0px;
 }
 
-#viewForm button{
+#viewForm button {
     margin: 5px;
 }
 
-#deleteForm{
+#deleteForm {
     margin-top: 100px;
+}
+
+#viewSpecificForm {
+    margin: 40px 0px 40px 0px;
+    
+}
+
+#viewSpecificFrom input, #viewSpecificForm select{
+    margin: 5px;
+    padding: 5px;
+}
+
+#viewSpecificForm button {
+    width: 370px;
+}
+
+#viewSpecificForm label {
+    text-align: left;
+    margin: 5px;
+    width: 370px;
 }

@@ -2,6 +2,7 @@
     --backgroud-color: #FFFBF8;
     --font-color: #242424;
     --nav-color: #7FA3D1;
+    --table-color: lightgray;
 }
 
 table {
@@ -15,4 +16,9 @@ th, td {
     padding: 8px;
     text-align: center;
     color: var(--font-color)
+}
+
+th {
+    background-color: var(--table-color);
+    font-family: "Montserrat", sans-serif;
 }
