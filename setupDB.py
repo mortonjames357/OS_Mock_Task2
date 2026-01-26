@@ -7,7 +7,7 @@ DB_PATH = './database/app_database.db'
 SEED_PATH = './database/seed.sql'
 
 # Function to set up the database
-def setup_db():
+def setup_DB():
      # Creating connecting to the database
      with sqlite3.connect(DB_PATH) as conn:
         cursor = conn.cursor()
@@ -33,7 +33,7 @@ def setup_db():
                 booking_type TEXT NOT NULL,
                 booking_status TEXT NOT NULL,
                 technican_id INTEGER,
-                FOREIGN KEY (user_id) REFERENCES users(user_id)
+                FOREIGN KEY (user_id, technican_id) REFERENCES users(user_id) technicians(technican_id)
             )""")
         
         # Creating technicians table
