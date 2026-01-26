@@ -6,6 +6,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
 </head>
 <body>
     <nav>
@@ -14,5 +15,43 @@
         <a href="{{ url_for('create_booking_page') }}">Create Booking</a>
         <a href="{{ url_for('view_specific') }}">View Specific</a>
     </nav>
+
+    <div class="titleCard">
+        <h1>Building a greener community through smart technology, local expertise, and a commitment to the planet.</h1>
+        <h2>Small Steps, Big Impact.</h2>
+        <button>See Our Products</button>
+    </div>
+
+    <div class="products">
+        <h3>Products We Offer</h3>
+        <div class="productCard">
+            <img src="" alt="">
+            <h3>EV Charger</h3>
+            <p>We offer next day installation of EV Chargers for our local customers at a reasonable price, reducing your cars charging time exponentially.</p>
+            <strong><p>£699.99</p></strong>
+        </div>
+        <div class="productCard">
+            <img src="" alt="">
+            <h3>Solar Pannels</h3>
+            <p>We offer singular solar pannels for a low price. We recommend that they be bough in bundles of 8-16 depending on your houses energy usage.</p>
+            <strong><p>£499.99</p></strong>
+        </div>
+        <div class="productCard">
+            <img src="" alt="">
+            <h3>Maintainence & Inspection Package</h3>
+            <p>We also offer customer our maintainence and inspection package where once a year one of our technicians will inspect any of your products and perform basic maintainence on the products.</p>
+            <strong><p>£249.99</p></strong>
+        </div>
+        <h3>Please call us at 07777 777777 to inquire about any other services we offer.</h3>
+    </div>
+
+    <div class="consultationCard">
+        <h3>Book a Consultation</h3>
+    </div>
+    
+    
+
+
+
 </body>
 </html>
