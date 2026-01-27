@@ -6,7 +6,7 @@ from queries.users_queries import *
 from queries.bookings_queries import *
 from queries.technician_queries import *
 from queries.appointments_queries import *
-from carbon_calc import calculate_carbon_footprint
+from calculators.carbon_calc import calculate_carbon_footprint
 
 app = Flask(__name__, static_folder='./static')
 
@@ -143,6 +143,11 @@ def carbon_calc():
         result=result,
         score=score
         )
+
+@app.route('/energy_calc', methods=['GET', 'POST'])
+def energy_calc():
+    return render_template('energy_calc.html')
+
 
 if __name__ == '__main__':
     start_database()
