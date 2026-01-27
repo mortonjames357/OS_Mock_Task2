@@ -23,3 +23,8 @@ VALUES
 (4, 5, '2024-07-04', '11:30', 'EV Charger Repair', 'Pending', 1),
 (5, 2, '2024-07-05', '15:00', 'Solar Pannel Installation', 'Confirmed', 3);
 
+INSERT INTO salesmenAppointments
+(name, email, appoint_reason)
+VALUES
+('John', 'john123@gmail.com', 'Enquire about solar pannels installation.')
+('Bob', 'bob321@gmail.com', 'Wanting to replace current EV Charger.')
