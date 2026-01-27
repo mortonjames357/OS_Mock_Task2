@@ -10,5 +10,3 @@ def calculate_home_emmissions():
 def calculate_food_emissions():
     pass
 
-def calculate_renewable():
-    pass
