@@ -96,11 +96,12 @@ label {
 
 
 #consultationForm {
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 
 #consultationForm button {
     width: 370px;
+    margin-top: 20px;
 }
 
 #carbonCalcBtn {

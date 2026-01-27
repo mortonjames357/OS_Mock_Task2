@@ -134,7 +134,7 @@ button:hover{
 }
 
 .consultationCard {
-    margin-top: 240px;
+    margin-top: 100px;
 }
 
 
@@ -162,6 +162,27 @@ footer img {
     height: 200px;
     margin-right: 100px;
 }
+
+#energyCalcTitle {
+    margin-top: 150px;
+}
+
+.greenTechInfo {
+    width: 42%;
+    min-width: 500px;
+    margin-top: 120px;
+}
+
+.greenTechInfo p {
+    font-size: 20px;
+}
+
+.carbonTitleCard {
+    margin-top: 100px;
+    text-align: center;
+    width: 60%;
+}
+
 
 /* Media Queries */
 

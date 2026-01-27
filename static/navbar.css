@@ -17,5 +17,7 @@ nav {
     display: flex;
     gap: 15px;
     width: 96vw;
-    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

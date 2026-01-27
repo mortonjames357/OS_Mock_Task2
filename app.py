@@ -7,6 +7,7 @@ from queries.bookings_queries import *
 from queries.technician_queries import *
 from queries.appointments_queries import *
 from calculators.carbon_calc import calculate_carbon_footprint
+from calculators.energy_calc import calculate_energy
 
 app = Flask(__name__, static_folder='./static')
 
@@ -121,8 +122,8 @@ def view_specific():
 
 @app.route('/carbon_calc', methods=['GET', 'POST'])
 def carbon_calc():
-    result = None
-    score = None
+    result = ""
+    score = ""
 
     if request.method == 'POST':
         tranportMethod = request.form.get('transportMethod')
@@ -146,7 +147,18 @@ def carbon_calc():
 
 @app.route('/energy_calc', methods=['GET', 'POST'])
 def energy_calc():
-    return render_template('energy_calc.html')
+    cost = ""
+
+    if request.method == "POST":
+        wattage = int(request.form.get('wattage'))
+        hours = int(request.form.get('hours'))
+        price = int(request.form.get('price'))
+        cost = calculate_energy(wattage, hours, price)
+
+    return render_template(
+        'energy_calc.html',
+        cost=cost
+        )
 
 
 if __name__ == '__main__':
