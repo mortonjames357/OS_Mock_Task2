@@ -5,9 +5,14 @@
     --table-color: lightgray;
 }
 
+.table-container {
+    width: 70%;
+    overflow-x: auto;
+}
+
 table {
     border-collapse: collapse;
-    width: 70%;
+    width: 100%;
     min-width: fit-content;
 }
 

@@ -39,7 +39,7 @@ button {
     position: relative;
     font-family: "Montserrat", sans-serif;
     background: none;
-    border: 2px solid var(--button-color);
+    border: 2px solid var(--font-color);
     color: var(--font-color);
     font-weight: 600;
     padding: 10px 15px;
@@ -57,7 +57,7 @@ button::before{
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: var(--button-color);
+    background-color: var(--font-color);
     z-index: -1;
     transition: all .4s ease;
 }
@@ -73,7 +73,11 @@ button:hover{
 .titleCard {
     text-align: center;
     max-width: 70%;
-    margin: 300px 0px 0px 0px;
+    margin: 200px 0px 0px 0px;
+}
+
+.titleCard img {
+    width: 250px;
 }
 
 .titleCard h1 {
@@ -82,51 +86,51 @@ button:hover{
 }
 
 .titleCard h2 {
-    font-size: 28px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 #productTitle {
-    margin: 430px 0px 0px 0px;
-    width: 72%;
-    text-align: left;
+    margin: 430px 0px 20px 0px;
+    text-align: center;
 }
 
 .products {
     width: 80%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    gap: 50px;
 }
 
 .productCard {
-    width: 400px;
-    height: 470px;
-    border: 1px solid var(--shadow-color);
-    box-shadow: 0px 2px 8px 2px var(--shadow-color);
+    width: 800px;
+    height: 820px;
+    border-bottom: 2px solid var(--font-color);
     margin: 10px;
-    border-radius: 10px;
     overflow: hidden;
 }
 
 .productCard img {
-    width: 400px;
-    height: 250px;
+    width: 800px;
+    height: 550px;
 }
 
-.productCard h3 {
+.productCard h2 {
     padding: 0px 0px 0px 10px;
 }
 
 .productCard p {
     height: 80px;
     padding: 10px;
+    font-size: 20px;
 }
 
 .productCard strong {
     padding: 10px;
+    font-size: 24px;
 }
 
 .consultationCard {
@@ -159,3 +163,47 @@ footer img {
     margin-right: 100px;
 }
 
+/* Media Queries */
+
+@media (max-width:1300px){
+    .productCard{
+        width: 700px;
+    }
+
+    .productCard img {
+        width: 700px;
+        height: 500px;
+    }
+}
+
+
+@media (max-width:900px){
+    .products {
+        gap: 60px;
+    }
+
+    .productCard{
+        width: 500px;
+        height: 650px;
+        margin: 0px;
+    }
+
+    .productCard img {
+        width: 500px;
+        height: 350px;
+    }
+
+    .productCard p {
+        font-size: 18px;
+        height: fit-content;
+    }
+
+    #contactText {
+        margin: 20px 50px 20px 50px;
+    }
+
+    .consultationCard {
+        margin-top: 30px;
+    }
+
+}

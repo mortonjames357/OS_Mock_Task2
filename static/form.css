@@ -55,6 +55,7 @@ label {
     display: flex;
     flex-direction: row;
     margin: 50px 0px 0px 0px;
+    flex-wrap: wrap;
 }
 
 #viewForm button {
