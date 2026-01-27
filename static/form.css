@@ -6,6 +6,7 @@
     --font-color: #242424;
     --nav-color: #7FA3D1;
     --button-color: #5A82C3;
+    --red-color: #dc3545;
 }
 
 form {
@@ -62,6 +63,14 @@ label {
 
 #deleteForm {
     margin-top: 100px;
+}
+
+#deleteForm button {
+    border: 2px solid var(--red-color);
+}
+
+#deleteForm button::before {
+    background-color: var(--red-color);
 }
 
 #viewSpecificForm {
