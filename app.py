@@ -6,7 +6,7 @@ from queries.users_queries import *
 from queries.bookings_queries import *
 from queries.technician_queries import *
 from queries.appointments_queries import *
-from carbon_calc import *
+from carbon_calc import calculate_carbon_footprint
 
 app = Flask(__name__, static_folder='./static')
 
@@ -126,7 +126,7 @@ def carbon_calc():
 
     if request.method == 'POST':
         tranportMethod = request.form.get('transportMethod')
-        transportAmount = request.form.get('transportAmount')
+        transportAmount = int(request.form.get('transportAmount'))
         Ev = request.form.get('EV')
         renewType = request.form.get('renewableType')
         lights = request.form.get('lights')

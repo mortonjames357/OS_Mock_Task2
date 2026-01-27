@@ -36,7 +36,7 @@
             </select>
             
             <label for="transportAmount">How many days do you travel?</label>
-            <input type="number" name="transportAmount" min="0">
+            <input type="number" name="transportAmount" min="0" max="7">
 
             <label for="EV">Do you have an EV?</label>
             <select name="EV" id="">
@@ -85,7 +85,7 @@
         </form>
 
         <h1>Your Results & Score</h1>
-        <strong>Score: {{ score }}</strong>
+        <strong>Score: {{ score }}/24</strong>
         <p>{{ result }}</p>
     </div>
 </body>
