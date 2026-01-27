@@ -102,3 +102,12 @@ label {
 #consultationForm button {
     width: 370px;
 }
+
+#carbonCalcBtn {
+    width: 370px;
+    margin-top: 30px;
+}
+
+label {
+    max-width: 370px;
+}

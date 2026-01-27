@@ -6,6 +6,7 @@ from queries.users_queries import *
 from queries.bookings_queries import *
 from queries.technician_queries import *
 from queries.appointments_queries import *
+from carbon_calc import *
 
 app = Flask(__name__, static_folder='./static')
 
@@ -120,7 +121,28 @@ def view_specific():
 
 @app.route('/carbon_calc', methods=['GET', 'POST'])
 def carbon_calc():
-    return render_template('carbon_calc.html')
+    result = None
+    score = None
+
+    if request.method == 'POST':
+        tranportMethod = request.form.get('transportMethod')
+        transportAmount = request.form.get('transportAmount')
+        Ev = request.form.get('EV')
+        renewType = request.form.get('renewableType')
+        lights = request.form.get('lights')
+        heating = request.form.get('heating')
+        takeawayFreq = request.form.get('takeawayFreq')
+        foodType = request.form.get('foodType')
+
+        temp = calculate_carbon_footprint(tranportMethod, transportAmount, Ev, renewType, lights, heating, takeawayFreq, foodType)
+        result = temp[0]
+        score = temp[1]
+
+    return render_template(
+        'carbon_calc.html',
+        result=result,
+        score=score
+        )
 
 if __name__ == '__main__':
     start_database()
