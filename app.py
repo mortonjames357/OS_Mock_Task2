@@ -2,9 +2,10 @@ import os
 import sqlite3
 from flask import Flask, request, render_template
 from setupDB import start_database
-from queries.users_queries import get_all_users, get_user_by_id, create_user, delete_user
-from queries.bookings_queries import get_all_bookings, get_booking_by_id, create_booking, delete_booking
-from queries.technician_queries import get_all_techs, get_tech_by_id, create_tech, delete_tech
+from queries.users_queries import *
+from queries.bookings_queries import *
+from queries.technician_queries import *
+from queries.appointments_queries import *
 
 app = Flask(__name__, static_folder='./static')
 
@@ -20,6 +21,7 @@ def view_all():
     bookings = None
     users = None
     technicians = None
+    appoints = None
 
     if request.method == 'POST':
         action = request.form.get('action')
@@ -32,6 +34,9 @@ def view_all():
             
         elif action == 'ViewTechnicians':
             technicians = get_all_techs()
+
+        elif action == "ViewAppointments":
+            appoints = get_all_appointments()
 
         elif action == 'Delete':
             delete_type = request.form.get('deleteType')
@@ -46,6 +51,9 @@ def view_all():
             elif delete_type == 'Technician':
                 delete_tech(id_input)
                 technicians = get_all_techs()
+            elif delete_type == "Appointment":
+                delete_appoint(id_input)
+                appoints = get_all_appointments()
     else:
         bookings = get_all_bookings()
 
@@ -53,7 +61,8 @@ def view_all():
         'view_all.html', 
         bookings=bookings, 
         users=users, 
-        technicians=technicians
+        technicians=technicians,
+        appoints=appoints
     )
 
 

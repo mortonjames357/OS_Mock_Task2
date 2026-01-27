@@ -21,6 +21,7 @@
         <button type="submit" name="action" value="ViewBookings">View Bookings</button>
         <button type="submit" name="action" value="ViewUsers">View Users</button>
         <button type="submit" name="action" value="ViewTechnicians">View Technicians</button>
+        <button type="submit" name="action" value="ViewAppointments">View Appointments</button>
     </form>
 
     <br>
@@ -103,11 +104,36 @@
         </table>
     {% endif %}
 
+    {% if appoints %}
+        <h2>All Appointments</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appoint in appoints %}
+                <tr>
+                    <td>{{ appoint[0] }}</td>
+                    <td>{{ appoint[1] }}</td>
+                    <td>{{ appoint[2] }}</td>
+                    <td>{{ appoint[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
     <form method="POST" id="deleteForm">
         <select name="deleteType" id="">
             <option value="Booking">Booking</option>
             <option value="User">User</option>
             <option value="Technician">Technician</option>
+            <option value="Appointment">Appointment</option>
         </select>
         <label for="idInput">Input ID:</label>
         <input type="number" name="idInput">
