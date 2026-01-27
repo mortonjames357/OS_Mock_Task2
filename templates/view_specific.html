@@ -22,6 +22,7 @@
             <option value="Booking">Booking</option>
             <option value="User">User</option>
             <option value="Technician">Technician</option>
+            <option value="Appointment">Appointment</option>
         </select>
         <label for="idInput">Input ID:</label>
         <input type="number" name="idInput">
@@ -95,6 +96,30 @@
                     <td>{{ item[5] }}</td>
                     <td>{{ item[6] }}</td>
                     <td>{{ item[7] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    {% if appoint %}
+        <h2>All Appointments</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in appoint %}
+                <tr>
+                    <td>{{ item[0] }}</td>
+                    <td>{{ item[1] }}</td>
+                    <td>{{ item[2] }}</td>
+                    <td>{{ item[3] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

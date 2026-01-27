@@ -27,7 +27,7 @@ def get_appoint_by_id(id):
             cursor.execute("SELECT * FROM salesmenAppointments WHERE appointment_id=?", (id,))
             appoint = cursor.fetchall()
 
-        return cursor
+        return appoint
     except sqlite3.Error as e:
         print(f"Database error: {e}")
 

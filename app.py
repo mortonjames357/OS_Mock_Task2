@@ -88,6 +88,7 @@ def view_specific():
     booking = None
     user = None
     tech = None
+    appoint = None
 
     if request.method == 'POST':
         id_input = request.form.get('idInput')
@@ -99,12 +100,15 @@ def view_specific():
             user = get_user_by_id(id_input)
         elif entity_type == 'Technician':
             tech = get_tech_by_id(id_input)
+        elif entity_type == 'Appointment':
+            appoint = get_appoint_by_id(id_input)
             
     return render_template(
         'view_specific.html', 
         booking=booking, 
         user=user, 
-        tech=tech
+        tech=tech,
+        appoint=appoint
     )
 
 
