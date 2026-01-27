@@ -17,6 +17,11 @@ h2 {
     font-family: "Shanti", serif;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -142,6 +147,11 @@ footer {
 footer h1 {
     color: var(--backgroud-color);
     margin-left: 100px;
+}
+
+#footerBtn {
+    border: none;
+    background: none;
 }
 
 footer img {

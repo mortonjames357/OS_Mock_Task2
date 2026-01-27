@@ -1,3 +1,11 @@
 function goToProducts(){
-    // Scrolls down to the products on click
+    window.scrollTo(0, 900)
+}
+
+function backToTop(e){
+    e.preventDefault()
+    window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 }
