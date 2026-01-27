@@ -10,8 +10,14 @@ from queries.appointments_queries import *
 app = Flask(__name__, static_folder='./static')
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        reason = request.form.get('textInput')
+
+        create_appoint(name, email, reason)
     return render_template('index.html')
 
 
