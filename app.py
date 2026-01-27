@@ -152,7 +152,7 @@ def energy_calc():
     if request.method == "POST":
         wattage = int(request.form.get('wattage'))
         hours = int(request.form.get('hours'))
-        price = int(request.form.get('price'))
+        price = float(request.form.get('price'))
         cost = calculate_energy(wattage, hours, price)
 
     return render_template(

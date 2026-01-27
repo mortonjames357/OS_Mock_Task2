@@ -1,7 +1,7 @@
-Create an appointment table for appointments with salesmen about products
-Put form data into appointment table
-Give product button its functionality
-Create a page that has a carbon footprint calculator
+
 Put passwords in a hashset
-Create login system
+Create login and register system
+Add dark mode button
+Create a change log and some other documentation (get change log info from commits)
+Create the versions from branches
 
