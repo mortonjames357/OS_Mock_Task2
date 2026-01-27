@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <script src="../static/main.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('view_all') }}">View All</a>
+        <a href="{{ url_for('create_booking_page') }}">Book</a>
+        <a href="{{ url_for('view_specific') }}">View Specific</a>
+        <a href="{{ url_for('carbon_calc') }}">Carbon Calc</a>
+    </nav>
+
+    <div class="titleCard">
+        <h1>Welcome to Our Carbon Footprint Calculator</h1>
+        <h2>Using your answers to the follwing questions we can give you a rating for how low or high your emissions are.</h2>
+    </div>
+
+    <div class="section1">
+        <form method="POST">
+            <h3>Transport</h3>
+
+            <label for="transportMethod">Enter Your Method of Transport</label>
+            <select name="transportMethod" id="">
+                <option value="Car">Car</option>
+                <option value="Public Transport">Public Transport</option>
+                <option value="Bicycle">Bicycle</option>
+                <option value="Walking">Walking</option>
+            </select>
+            
+            <label for="transportAmount">How many days do you travel</label>
+            <input type="number" name="transportAmount" min="0">
+
+            <label for=""></label>
+
+        </form>
+    </div>
+</body>
+</html>

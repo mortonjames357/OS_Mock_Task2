@@ -118,8 +118,9 @@ def view_specific():
     )
 
 
-
-
+@app.route('/carbon_calc', methods=['GET', 'POST'])
+def carbon_calc():
+    return render_template('carbon_calc.html')
 
 if __name__ == '__main__':
     start_database()
