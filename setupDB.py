@@ -46,6 +46,14 @@ def setup_DB():
                 FOREIGN KEY (technican_id) REFERENCES technicians(technican_id)
             )""")
         
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS salesmenAppointments (
+                appointment_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL,
+                email TEXT NOT NULL,
+                appoint_reason TEXT NOT NULL
+            )""")
+        
         
         
         

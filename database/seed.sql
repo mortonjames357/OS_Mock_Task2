@@ -22,3 +22,4 @@ VALUES
 (3, 4, '2024-07-03', '09:00', 'Energy Management Repair', 'Completed', 3),
 (4, 5, '2024-07-04', '11:30', 'EV Charger Repair', 'Pending', 1),
 (5, 2, '2024-07-05', '15:00', 'Solar Pannel Installation', 'Confirmed', 3);
+
