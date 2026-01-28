@@ -154,6 +154,14 @@ footer {
     margin-top: 200px;
 }
 
+#viewSpecificFooter {
+    margin-top: 370px;
+}
+
+#energyCalcFooter {
+    margin-top: 70px;
+}
+
 footer h1 {
     color: var(--a-color);
     margin-left: 100px;
@@ -163,6 +171,7 @@ footer h1 {
     border: none;
     background: none;
 }
+
 
 footer img {
     height: 200px;

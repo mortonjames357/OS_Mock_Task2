@@ -19,6 +19,8 @@
         <a href="{{ url_for('energy_calc') }}">Energy Calc</a>
     </nav>
 
+    <button class="darkModeBtn" id="darkModeBtn">Dark Mode</button>
+
     <h1 id="energyCalcTitle">Calculate Energy Usage of Your Device</h1>
 
     <form method="POST">
@@ -36,6 +38,11 @@
 
     <h2>Cost of Device</h2>
     <p>Cost: <strong>£{{ cost }}</strong></p>
+    
+    <footer id="energyCalcFooter">
+        <a href="" onclick="backToTop(event)"><h1>ROLSA TECH</h1></a>
+        <img src="../static/imgs/RolsaTechLogo.png" alt="Logo for rolsa technologies">
+    </footer>
 
 </body>
 </html>

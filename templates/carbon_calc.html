@@ -19,6 +19,8 @@
         <a href="{{ url_for('energy_calc') }}">Energy Calc</a>
     </nav>
 
+    <button class="darkModeBtn" id="darkModeBtn">Dark Mode</button>
+
     <div class="carbonTitleCard">
         <h1>Welcome to Our Carbon Footprint Calculator</h1>
         <h2>Using your answers to the follwing questions we can give you a rating for how low or high your emissions are.</h2>
@@ -89,5 +91,11 @@
         <strong>Score: {{ score }}/24</strong>
         <p>{{ result }}</p>
     </div>
+
+    <footer>
+        <a href="" onclick="backToTop(event)"><h1>ROLSA TECH</h1></a>
+        <img src="../static/imgs/RolsaTechLogo.png" alt="Logo for rolsa technologies">
+    </footer>
+
 </body>
 </html>
