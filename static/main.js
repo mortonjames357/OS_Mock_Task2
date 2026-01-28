@@ -18,14 +18,31 @@ function darkModeToggle(){
     // Get the document root
     const root = document.documentElement;
 
-    // Update the CSS variable
-    root.style.setProperty('--backgroud-color', '#242424');
-    root.style.setProperty('--font-color', '#FFFBF8')
-    root.style.setProperty('--table-color', '#3b3b3b')
-    root.style.setProperty('--input-color', '#242424')
+    
 
-    // Change Image
-    document.getElementById('titleImg').src="../static/imgs/RolsaTechLogo.png"
+    // Get the body 
+    const body = document.getElementsByTagName("BODY")[0];
+    // Get the value of backgound color in body
+    var value = getComputedStyle(body).getPropertyValue('--backgroud-color');
+
+    if (value == "#242424"){
+        // Set values back to origional
+        root.style.setProperty('--backgroud-color', '#FFFBF8')
+        root.style.setProperty('--font-color', '#242424')
+        root.style.setProperty('--table-color', 'lightgray')
+        root.style.setProperty('--input-color', 'white')
+        // Change Image
+        document.getElementById('titleImg').src="../static/imgs/RolsaTechWhiteLogo.png"
+    }
+    else {
+        // Update the CSS variable
+        root.style.setProperty('--backgroud-color', '#242424');
+        root.style.setProperty('--font-color', '#FFFBF8')
+        root.style.setProperty('--table-color', '#3b3b3b')
+        root.style.setProperty('--input-color', '#242424')
+        // Change Image
+        document.getElementById('titleImg').src="../static/imgs/RolsaTechLogo.png"
+    }
 
 }
 
