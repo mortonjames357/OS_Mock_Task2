@@ -147,6 +147,11 @@ footer {
     justify-content: space-between;
     background-color: var(--nav-color);
     height: 200px;
+    margin-top: 50px;
+}
+
+#viewAllFooter {
+    margin-top: 200px;
 }
 
 footer h1 {

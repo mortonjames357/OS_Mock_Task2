@@ -6,6 +6,7 @@
     --font-color: #242424;
     --button-color: #5A82C3;
     --red-color: #dc3545;
+    --input-color: white;
 }
 
 form {
@@ -24,6 +25,7 @@ select {
     font-size: 16px;
     color: var(--font-color);
     width: 370px;
+    background-color: var(--input-color);
 }
 
 input, textarea {
@@ -35,6 +37,7 @@ input, textarea {
     font-size: 16px;
     color: var(--font-color);
     width: 350px;
+    background-color: var(--input-color);
 }
 
 label {

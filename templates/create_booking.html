@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <script src="../static/main.js" defer></script>
 </head>
 <body>
     <nav>
@@ -17,6 +18,8 @@
         <a href="{{ url_for('carbon_calc') }}">Carbon Calc</a>
         <a href="{{ url_for('energy_calc') }}">Energy Calc</a>
     </nav>
+
+    <button class="darkModeBtn" id="darkModeBtn">Dark Mode</button>
 
     <h2>Create a New Booking</h2>
     <form method="POST">
@@ -57,6 +60,11 @@
 
         <button type="submit" id="bookingBtn">Create Booking</button>
     </form>
+
+    <footer id="viewAllFooter">
+        <a href="" onclick="backToTop(event)"><h1>ROLSA TECH</h1></a>
+        <img src="../static/imgs/RolsaTechLogo.png" alt="Logo for rolsa technologies">
+    </footer>
 
 
 </body>

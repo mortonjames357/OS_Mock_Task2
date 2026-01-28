@@ -21,6 +21,8 @@ function darkModeToggle(){
     // Update the CSS variable
     root.style.setProperty('--backgroud-color', '#242424');
     root.style.setProperty('--font-color', '#FFFBF8')
+    root.style.setProperty('--table-color', '#3b3b3b')
+    root.style.setProperty('--input-color', '#242424')
 
     // Change Image
     document.getElementById('titleImg').src="../static/imgs/RolsaTechLogo.png"
