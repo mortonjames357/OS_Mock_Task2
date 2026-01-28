@@ -184,6 +184,17 @@ footer img {
 }
 
 
+.darkModeBtn {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 3px solid var(--font-color);
+    border-radius: 50px;
+}
+
+
 /* Media Queries */
 
 @media (max-width:1300px){

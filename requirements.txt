@@ -2,6 +2,10 @@
 Put passwords in a hashset
 Create login and register system
 Add dark mode button
+Add functionality to dark mode button
+Add styling, img and text changed to dark mode button
+Add a function to change dark mode btn location based on its y level (footer)
+
 Create a change log and some other documentation (get change log info from commits)
 Create the versions from branches
 

@@ -62,8 +62,12 @@ label {
     margin: 5px;
 }
 
+#deleteHeader {
+    margin-top: 40px;
+}
+
 #deleteForm {
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 #deleteForm button {

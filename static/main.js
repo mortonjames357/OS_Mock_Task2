@@ -11,3 +11,18 @@ function backToTop(e){
             behavior: "smooth"
         });
 }
+
+// Function to apply all dark mode styling
+function darkModeToggle(){
+    console.log("clicked")
+}
+
+// Function to change position of btn when it hover over the footer (get x/y of footer)
+function darkModeBtnChange(){
+
+}
+
+
+// Event listener for dark mode button
+document.getElementById('darkModeBtn').addEventListener("click", darkModeToggle);
+
