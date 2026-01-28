@@ -46,6 +46,7 @@ def setup_DB():
                 FOREIGN KEY (technican_id) REFERENCES technicians(technican_id)
             )""")
         
+        # Creating appointments table
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS salesmenAppointments (
                 appointment_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -67,22 +68,24 @@ def seed_DB():
             cursor = conn.cursor()
             cursor.execute("PRAGMA foreign_keys = ON;")
 
+            # Checking if there is any data in bookings
             cursor.execute("SELECT COUNT(*) FROM bookings")
             if cursor.fetchone()[0] > 0:
                 print("Database already seeded.")
                 return
 
+            # Seeding the database
             with open(SEED_PATH, 'r', encoding='utf-8') as f:
                 seed_sql = f.read()
-                # executescript automatically issues a COMMIT before executing
                 cursor.executescript(seed_sql)
             
             print("Database seeded successfully.")
             conn.commit()
+    # Error handling
     except sqlite3.Error as e:
         print(f"An error occurred: {e}")
 
-        
+# Function to call the other two functions  
 def start_database():
     setup_DB()
     seed_DB()
