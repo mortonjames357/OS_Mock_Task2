@@ -1,3 +1,4 @@
+-- Seed data for all databases whilst testing
 INSERT INTO users
 (username, email, password)
 VALUES
