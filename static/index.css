@@ -4,8 +4,9 @@
 :root {
     --backgroud-color: #FFFBF8;
     --font-color: #242424;
-    --button-color: #5A82C3;
+    --nav-color: #242424;
     --shadow-color: #24242459;
+    --a-color: #FFFBF8;
 }
 
 /* Constant stylings */
@@ -144,12 +145,12 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--font-color);
+    background-color: var(--nav-color);
     height: 200px;
 }
 
 footer h1 {
-    color: var(--backgroud-color);
+    color: var(--a-color);
     margin-left: 100px;
 }
 

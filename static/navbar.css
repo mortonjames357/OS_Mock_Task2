@@ -3,16 +3,18 @@
 :root {
     --backgroud-color: #FFFBF8;
     --font-color: #242424;
+    --nav-color: #242424;
+    --a-color: #FFFBF8;
 }
 
 a {
     font-family: "Montserrat", sans-serif;
-    color: var(--backgroud-color);
+    color: var(--a-color);
     text-decoration: none;
 }
 
 nav {
-    background-color: var(--font-color);
+    background-color: var(--nav-color);
     padding: 10px 40px 10px 40px;
     display: flex;
     gap: 15px;

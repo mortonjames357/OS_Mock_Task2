@@ -15,13 +15,17 @@ function backToTop(e){
 // Function to apply all dark mode styling
 function darkModeToggle(){
     console.log("clicked")
+    // Get the document root
+    const root = document.documentElement;
+
+    // Update the CSS variable
+    root.style.setProperty('--backgroud-color', '#242424');
+    root.style.setProperty('--font-color', '#FFFBF8')
+
+    // Change Image
+    document.getElementById('titleImg').src="../static/imgs/RolsaTechLogo.png"
+
 }
-
-// Function to change position of btn when it hover over the footer (get x/y of footer)
-function darkModeBtnChange(){
-
-}
-
 
 // Event listener for dark mode button
 document.getElementById('darkModeBtn').addEventListener("click", darkModeToggle);
