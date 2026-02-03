@@ -71,4 +71,6 @@ def delete_user(user_id):
     except sqlite3.Error as e:
         print(f"Error deleting user: {e}")
 
-
+# Function to get user by email
+def get_user_by_email():
+    pass
