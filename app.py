@@ -28,7 +28,7 @@ def register():
         hashed_pw = generate_password_hash(password)
         create_user(username, email, hashed_pw)
 
-        return redirect(url_for('login'))
+        return redirect(url_for('/'))
 
     return render_template('register.html', error=error)
 

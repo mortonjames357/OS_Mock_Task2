@@ -1,6 +1,0 @@
-
-Put passwords in a hashset
-Create login and register system
-Create a change log and some other documentation (get change log info from commits)
-Create the versions from branches
-
