@@ -17,9 +17,6 @@ function darkModeToggle(){
     console.log("clicked")
     // Get the document root
     const root = document.documentElement;
-
-    
-
     // Get the body 
     const body = document.getElementsByTagName("BODY")[0];
     // Get the value of backgound color in body

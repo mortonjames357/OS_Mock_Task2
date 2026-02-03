@@ -65,7 +65,7 @@ def delete_tech(tech_id):
             cursor.execute("PRAGMA foreign_keys = ON;")
 
             # Execute yje query
-            cursor.execute("DELETE FROM technicians WHERE technician_id=?", (tech_id))
+            cursor.execute("DELETE FROM technicians WHERE technican_id=?", (tech_id))
             conn.commit()
     # Error handling
     except sqlite3.Error as e:

@@ -6,14 +6,16 @@ VALUES
 ('user1', 'user1@example.com', 'password1'),
 ('user2', 'user2@example.com', 'password2'),
 ('user3', 'user3@example.com', 'password3'),
-('user4', 'user4@example.com', 'password4');
+('user4', 'user4@example.com', 'password4'),
+('test', 'test@test.com', 'test');
 
 INSERT INTO technicians
 (technican_id, name, department)
 VALUES
 (1, 'Tech One', 'EV Specialist'),
 (2, 'Tech Two', 'General Maintenance'),
-(3, 'Tech Three', 'Solar Specialist');
+(3, 'Tech Three', 'Solar Specialist'),
+(4, 'Test', 'Test');
 
 INSERT INTO bookings
 (booking_id, user_id, address, booking_date, booking_time, booking_type, booking_status, technican_id)

@@ -1,7 +1,8 @@
 # Imports
 import os
 import sqlite3
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for, session
+from werkzeug.security import generate_password_hash, check_password_hash
 from setupDB import start_database
 from queries.users_queries import *
 from queries.bookings_queries import *
@@ -12,6 +13,7 @@ from calculators.energy_calc import calculate_energy
 
 # Creating the flask app
 app = Flask(__name__, static_folder='./static')
+app.secret_key= "secret_key"
 
 # Route for home
 @app.route('/', methods=['GET', 'POST'])
