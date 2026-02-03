@@ -1,0 +1,29 @@
+/* Colour Variables */
+:root {
+    --backgroud-color: #FFFBF8;
+    --font-color: #242424;
+    --nav-color: #242424;
+    --shadow-color: #24242459;
+    --a-color: #FFFBF8;
+}
+
+a {
+    display: flex;
+    color: var(--font-color);
+    transition: all .3s ease;
+    margin-top: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+body {
+    margin-top: 50px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}

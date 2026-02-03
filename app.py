@@ -15,8 +15,52 @@ from calculators.energy_calc import calculate_energy
 app = Flask(__name__, static_folder='./static')
 app.secret_key= "secret_key"
 
-# Route for home
+# Route for register
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    error = None
+
+    if request.method == 'POST':
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        hashed_pw = generate_password_hash(password)
+        create_user(username, email, hashed_pw)
+
+        return redirect(url_for('login'))
+
+    return render_template('register.html', error=error)
+
+
+# Route for login
 @app.route('/', methods=['GET', 'POST'])
+def login():
+    error = None
+
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        user = get_user_by_email(email)
+
+        if user and check_password_hash(user[3], password):
+            session['user_id'] = user[0]
+            session['username'] = user[1]
+            return redirect(url_for('home'))
+        else:
+            error = "Invalid email or password"
+
+    return render_template('login.html', error=error)
+
+# Route for logout
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('login'))
+
+# Route for home
+@app.route('/home', methods=['GET', 'POST'])
 def home():
     # Getting data for create appointment function from home page
     if request.method == 'POST':

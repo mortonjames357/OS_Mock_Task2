@@ -72,5 +72,18 @@ def delete_user(user_id):
         print(f"Error deleting user: {e}")
 
 # Function to get user by email
-def get_user_by_email():
-    pass
+def get_user_by_email(email):
+    try:
+        # COnnect to the db
+        with sqlite3.connect(DB_PATH) as conn:
+            cursor = conn.cursor()
+            cursor.execute("PRAGMA foreign_keys = ON;")
+
+            # Execute the query
+            cursor.execute(
+                "SELECT * FROM users WHERE email = ?", (email,)
+            )
+            return cursor.fetchone()
+    # Error handling
+    except sqlite3.Error as e:
+        print(f"Database error: {e}")

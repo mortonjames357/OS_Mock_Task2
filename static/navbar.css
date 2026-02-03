@@ -22,4 +22,11 @@ nav {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav div {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
 }
