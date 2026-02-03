@@ -1,6 +1,8 @@
 #Imports
 import os
 import sqlite3
+from werkzeug.security import generate_password_hash
+from queries.users_queries import create_user
 
 # Constants
 DB_PATH = './database/database.db'
@@ -73,6 +75,19 @@ def seed_DB():
             if cursor.fetchone()[0] > 0:
                 print("Database already seeded.")
                 return
+            
+            # Seed users
+            users = [
+                ("admin", "admin@example.com", "admin123"),
+                ("user1", "user1@example.com", "password1"),
+                ("user2", "user2@example.com", "password2"),
+                ("user3", "user3@example.com", "password3"),
+                ("user4", "user4@example.com", "password4"),
+            ]
+
+            for username, email, password in users:
+                hashed_pw = generate_password_hash(password)
+                create_user(username, email, hashed_pw)
 
             # Seeding the database
             with open(SEED_PATH, 'r', encoding='utf-8') as f:
