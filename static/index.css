@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shanti&display=swap');
+
+/* Colour Variables */
+:root {
+    --backgroud-color: #FFFBF8;
+    --font-color: #242424;
+    --nav-color: #242424;
+    --shadow-color: #24242459;
+    --a-color: #FFFBF8;
+}
+
+/* Constant stylings */
+h1 {
+    font-family: "Montserrat", sans-serif;
+}
+
+h2 {
+    font-family: "Montserrat", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--backgroud-color);
+    color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+/* Button styling */
+button {
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    background: none;
+    border: 2px solid var(--font-color);
+    color: var(--font-color);
+    font-weight: 600;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 1;
+    transition: all .4s ease;
+}
+
+button::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--font-color);
+    z-index: -1;
+    transition: all .4s ease;
+}
+
+button:hover::before{
+    width: 100%;
+}
+
+button:hover{
+    color: var(--backgroud-color);
+}
+
+.titleCard {
+    text-align: center;
+    max-width: 70%;
+    margin: 200px 0px 0px 0px;
+}
+
+.titleCard img {
+    width: 250px;
+}
+
+.titleCard h1 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.titleCard h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#productTitle {
+    margin: 430px 0px 20px 0px;
+    text-align: center;
+}
+
+.products {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.productCard {
+    width: 800px;
+    height: 820px;
+    border-bottom: 2px solid var(--font-color);
+    margin: 10px;
+    overflow: hidden;
+}
+
+.productCard img {
+    width: 800px;
+    height: 550px;
+}
+
+.productCard h2 {
+    padding: 0px 0px 0px 10px;
+}
+
+.productCard p {
+    height: 80px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.productCard strong {
+    padding: 10px;
+    font-size: 24px;
+}
+
+.consultationCard {
+    margin-top: 100px;
+}
+
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--nav-color);
+    height: 200px;
+    margin-top: 50px;
+}
+
+#viewAllFooter {
+    margin-top: 200px;
+}
+
+#viewSpecificFooter {
+    margin-top: 370px;
+}
+
+#energyCalcFooter {
+    margin-top: 70px;
+}
+
+footer h1 {
+    color: var(--a-color);
+    margin-left: 100px;
+}
+
+#footerBtn {
+    border: none;
+    background: none;
+}
+
+
+footer img {
+    height: 200px;
+    margin-right: 100px;
+}
+
+#energyCalcTitle {
+    margin-top: 150px;
+}
+
+.greenTechInfo {
+    width: 42%;
+    min-width: 500px;
+    margin-top: 120px;
+}
+
+.greenTechInfo p {
+    font-size: 20px;
+}
+
+.carbonTitleCard {
+    margin-top: 100px;
+    text-align: center;
+    width: 60%;
+}
+
+
+.darkModeBtn {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 3px solid var(--font-color);
+    border-radius: 50px;
+}
+
+
+/* Media Queries */
+
+@media (max-width:1300px){
+    .productCard{
+        width: 700px;
+    }
+
+    .productCard img {
+        width: 700px;
+        height: 500px;
+    }
+}
+
+
+@media (max-width:900px){
+    .products {
+        gap: 60px;
+    }
+
+    .productCard{
+        width: 500px;
+        height: 650px;
+        margin: 0px;
+    }
+
+    .productCard img {
+        width: 500px;
+        height: 350px;
+    }
+
+    .productCard p {
+        font-size: 18px;
+        height: fit-content;
+    }
+
+    #contactText {
+        margin: 20px 50px 20px 50px;
+    }
+
+    .consultationCard {
+        margin-top: 30px;
+    }
+
+}

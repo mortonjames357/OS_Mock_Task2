@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shanti&display=swap');
+
+/* Colour Variables */
+:root {
+    --backgroud-color: #FFFBF8;
+    --font-color: #242424;
+    --button-color: #5A82C3;
+    --red-color: #dc3545;
+    --input-color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+select {
+    margin: 10px 0px 10px 0px;
+    padding: 8px;
+    border: 1px solid var(--font-color);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: var(--font-color);
+    width: 370px;
+    background-color: var(--input-color);
+}
+
+input, textarea {
+    margin: 10px;
+    padding: 8px;
+    border: 1px solid var(--font-color);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: var(--font-color);
+    width: 350px;
+    background-color: var(--input-color);
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: var(--font-color);
+    margin-top: 10px;
+}
+
+#bookingBtn {
+    margin-top: 20px;
+    width: 370px;
+    height: 50px;
+}
+
+#viewForm {
+    display: flex;
+    flex-direction: row;
+    margin: 50px 0px 0px 0px;
+    flex-wrap: wrap;
+}
+
+#viewForm button {
+    margin: 5px;
+}
+
+#deleteHeader {
+    margin-top: 40px;
+}
+
+#deleteForm {
+    margin-top: 10px;
+}
+
+#deleteForm button {
+    border: 2px solid var(--red-color);
+}
+
+#deleteForm button::before {
+    background-color: var(--red-color);
+}
+
+#viewSpecificForm {
+    margin: 40px 0px 40px 0px;
+    
+}
+
+#viewSpecificFrom input, #viewSpecificForm select{
+    margin: 5px;
+    padding: 5px;
+}
+
+#viewSpecificForm button {
+    width: 370px;
+}
+
+#viewSpecificForm label {
+    text-align: left;
+    margin: 5px;
+    width: 370px;
+}
+
+
+#consultationForm {
+    margin-bottom: 150px;
+}
+
+#consultationForm button {
+    width: 370px;
+    margin-top: 20px;
+}
+
+#carbonCalcBtn {
+    width: 370px;
+    margin-top: 30px;
+}
+
+label {
+    max-width: 370px;
+}

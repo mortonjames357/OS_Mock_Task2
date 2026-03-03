@@ -1,0 +1,28 @@
+:root {
+    --backgroud-color: #FFFBF8;
+    --font-color: #242424;
+    --table-color: lightgray;
+}
+
+.table-container {
+    width: 70%;
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: fit-content;
+}
+
+th, td {
+    border: 1px solid var(--font-color);
+    padding: 8px;
+    text-align: center;
+    color: var(--font-color)
+}
+
+th {
+    background-color: var(--table-color);
+    font-family: "Montserrat", sans-serif;
+}

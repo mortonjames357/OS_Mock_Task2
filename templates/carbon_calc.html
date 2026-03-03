@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <script src="../static/main.js"></script>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('view_all') }}">View All</a>
+            <a href="{{ url_for('create_booking_page') }}">Book</a>
+            <a href="{{ url_for('view_specific') }}">View Specific</a>
+            <a href="{{ url_for('carbon_calc') }}">Carbon Calc</a>
+            <a href="{{ url_for('energy_calc') }}">Energy Calc</a>
+        </div>  
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <button class="darkModeBtn" id="darkModeBtn">Dark Mode</button>
+
+    <div class="carbonTitleCard">
+        <h1>Welcome to Our Carbon Footprint Calculator</h1>
+        <h2>Using your answers to the follwing questions we can give you a rating for how low or high your emissions are.</h2>
+    </div>
+
+    <div class="section1">
+        <form method="POST">
+            <h3>Transport</h3>
+
+            <label for="transportMethod">Enter Your Method of Transport</label>
+            <select name="transportMethod" id="">
+                <option value="Car">Car</option>
+                <option value="Public_Transport">Public Transport</option>
+                <option value="Bicycle">Bicycle</option>
+                <option value="Walking">Walking</option>
+            </select>
+            
+            <label for="transportAmount">How many days do you travel?</label>
+            <input type="number" name="transportAmount" min="0" max="7">
+
+            <label for="EV">Do you have an EV?</label>
+            <select name="EV" id="">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+                <option value="NA">Don't have a car</option>
+            </select>
+
+            <h3>Home</h3>
+
+            <label for="renewableType">What type of renewable device do you have?</label>
+            <select name="renewableType" id="">
+                <option value="None">None</option>
+                <option value="Solar">Solar Pannel</option>
+                <option value="GroundSource">Ground Source Pump</option>
+                <option value="Wind">Wind</option>
+                <option value="Hydro">Hydro-Electric</option>
+            </select>
+
+            <label for="lights">Do you switch off lights and appliances when not in use?</label>
+            <select name="lights" id="">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="heating">Do you turn off the heating when leaving your house?</label>
+            <select name="heating" id="">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <h3>Food</h3>
+
+            <label for="takeawayFreq">Do you order food frequently?</label>
+            <select name="takeawayFreq" id="">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="foodType">Do you eat processed food regularly?</label>
+            <select name="foodType" id="">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <button type="submit" id="carbonCalcBtn">Calculate</button>
+        </form>
+
+        <h1>Your Results & Score</h1>
+        <strong>Score: {{ score }}/24</strong>
+        <p>{{ result }}</p>
+    </div>
+
+    <footer>
+        <a href="" onclick="backToTop(event)"><h1>ROLSA TECH</h1></a>
+        <img src="../static/imgs/RolsaTechLogo.png" alt="Logo for rolsa technologies">
+    </footer>
+
+</body>
+</html>

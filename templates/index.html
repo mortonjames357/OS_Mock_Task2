@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <script src="../static/main.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('view_all') }}">View All</a>
+            <a href="{{ url_for('create_booking_page') }}">Book</a>
+            <a href="{{ url_for('view_specific') }}">View Specific</a>
+            <a href="{{ url_for('carbon_calc') }}">Carbon Calc</a>
+            <a href="{{ url_for('energy_calc') }}">Energy Calc</a>
+        </div>  
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <button class="darkModeBtn" id="darkModeBtn">Dark Mode</button>
+
+    <div class="titleCard">
+        <img src="../static/imgs/RolsaTechWhiteLogo.png" alt="" id="titleImg">
+        <h1>Building a greener community through smart technology, local expertise, and a commitment to the planet.</h1>
+        <h2>Small Steps, Big Impact.</h2>
+        <button id="productButton" onclick="goToProducts()">See Our Products</button>
+    </div>
+
+    <h1 id="productTitle">Products We Offer</h1>
+    <div class="products">
+        <div class="productCard">
+            <img src="../static/imgs/EVCharger.jpg" alt="Picture of a wall mounted EV CHarger plugged into an electric vehicle.">
+            <h2>EV Charger</h2>
+            <p>Experience faster, safer, and more cost-effective charging with our professional next-day EV charger installation for local customers in Middlesbrough and the surrounding area, offered at a reasonable and transparent price to drastically enhance your vehicle's charging time.</p>
+            <strong>£699.99</strong>
+        </div>
+        <div class="productCard">
+            <img src="../static/imgs/solarPannels.jpg" alt="Picture of some solar pannels on a houses roof.">
+            <h2>Solar Pannels</h2>
+            <p>We offer individual, high-efficiency solar panels at a low, transparent price for those looking to expand an existing setup or start small. However, to achieve true energy independence and maximize your return on investment in 2026, we typically recommend purchasing panels in bundles of 8 to 16 units.</p>
+            <strong>£499.99</strong>
+        </div>
+        <div class="productCard">
+            <img src="../static/imgs/geo-smart-meter.jpg" alt="Picture of a smart meter for a home">
+            <h2>Energy Management Systmes</h2>
+            <p>Our certified technicians can professionally install a comprehensive Energy Management System in your home, allowing you to monitor real-time energy consumption and gain a clear understanding of your utility costs.</p>
+            <strong>£249.99</strong>
+        </div>
+    </div>
+
+    <h3 id="contactText">Please call us at 07777 777777 to inquire about any other services we offer.</h3>
+
+    <div class="greenTechInfo">
+        <h1>Why Green Technology</h1>
+        <p>In 2026, green energy technologies provide individuals with powerful tools to achieve financial independence and long-term security. Integrating solar panels with advanced battery storage allows homeowners to generate and store their own electricity, significantly reducing reliance on a national grid that is facing rising costs. Programs like the UK’s Warm Homes Plan, launched in early 2026, further lower the barrier to entry by providing low-interest loans and grants for heat pumps and insulation. Beyond direct savings, these technologies serve as a hedge against inflation and energy price volatility, while simultaneously increasing property values by up to 15% as energy-efficient "smart homes" become a baseline expectation for modern buyers.<br><br>These technologies also offer significant health and lifestyle benefits by creating a cleaner living environment. By replacing fossil-fuel-based heating and transportation with electric heat pumps and electric vehicles (EVs), individuals directly contribute to reducing local air pollutants like nitrogen dioxide and fine particulate matter, which are linked to respiratory and cardiovascular illnesses. Furthermore, distributed renewable systems—such as modular solar arrays—enhance personal resilience by keeping critical appliances running during regional grid outages or extreme weather events. Ultimately, adopting green tech fosters a more self-sufficient lifestyle, allowing people to power their lives on their own terms while supporting global climate action.</p>
+    </div>
+
+    <div class="consultationCard">
+        <h3>Book a Consultation</h3>
+    </div>
+    <form method="POST" id="consultationForm">
+        <label for="name">Enter Name:</label>
+        <input type="text" name="name">
+
+        <label for="email">Enter Email:</label>
+        <input type="text" name="email">
+
+        <label for="textInput">Input Reason for Consultation</label>
+        <textarea name="textInput" id="" maxlength="200" rows="6"></textarea>
+
+        <button name="action" value="Submit">Submit</button>
+    </form>
+
+
+    <footer>
+        <a href="" onclick="backToTop(event)"><h1>ROLSA TECH</h1></a>
+        <img src="../static/imgs/RolsaTechLogo.png" alt="Logo for rolsa technologies">
+    </footer>
+    
+
+
+
+</body>
+</html>

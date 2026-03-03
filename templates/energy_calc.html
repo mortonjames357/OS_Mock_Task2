@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <script src="../static/main.js"></script>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('view_all') }}">View All</a>
+            <a href="{{ url_for('create_booking_page') }}">Book</a>
+            <a href="{{ url_for('view_specific') }}">View Specific</a>
+            <a href="{{ url_for('carbon_calc') }}">Carbon Calc</a>
+            <a href="{{ url_for('energy_calc') }}">Energy Calc</a>
+        </div>  
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <button class="darkModeBtn" id="darkModeBtn">Dark Mode</button>
+
+    <h1 id="energyCalcTitle">Calculate Energy Usage of Your Device</h1>
+
+    <form method="POST">
+        <label for="wattage">Enter Wattage</label>
+        <input type="number" name="wattage" min="0">
+
+        <label for="hours">Enter Hours Used</label>
+        <input type="number" name="hours" min="0">
+
+        <label for="price">Enter Price per kWh</label>
+        <input type="number" step="0.01" name="price" min="0">
+
+        <button>Calculate</button>
+    </form>
+
+    <h2>Cost of Device</h2>
+    <p>Cost: <strong>£{{ cost }}</strong></p>
+    
+    <footer id="energyCalcFooter">
+        <a href="" onclick="backToTop(event)"><h1>ROLSA TECH</h1></a>
+        <img src="../static/imgs/RolsaTechLogo.png" alt="Logo for rolsa technologies">
+    </footer>
+
+</body>
+</html>

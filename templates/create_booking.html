@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Booking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <script src="../static/main.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('view_all') }}">View All</a>
+            <a href="{{ url_for('create_booking_page') }}">Book</a>
+            <a href="{{ url_for('view_specific') }}">View Specific</a>
+            <a href="{{ url_for('carbon_calc') }}">Carbon Calc</a>
+            <a href="{{ url_for('energy_calc') }}">Energy Calc</a>
+        </div>  
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <button class="darkModeBtn" id="darkModeBtn">Dark Mode</button>
+
+    <h2>Create a New Booking</h2>
+    <form method="POST">
+        <label for="userID">Enter User ID:</label>
+        <input type="number" name="userID">
+
+        <label for="address">Enter Address:</label>
+        <input type="text" name="address">
+
+        <label for="date">Enter Date:</label>
+        <input type="date" name="date">
+
+        <label for="time">Enter Time:</label>
+        <input type="time" name="time">
+
+        <label for="bookingType">Select Booking Type:</label>
+        <select name="bookingType" id="">
+            <option value="EV Charger Installation">EV Charger Installation</option>
+            <option value="EV Charger Repair">EV Charger Repair</option>
+            <option value="Solar Pannel Installation">Solar Pannel Installation</option>
+            <option value="Solar Pannel Repair">Solar Pannel Repair</option>
+            <option value="Other Green Energy Product Installation">Other Green Energy Product Installation</option>
+            <option value="Other Green Energy Product Repair">Other Green Energy Product Repair</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="bookingStatus">Enter Status:</label>
+        <select name="bookingStatus" id="">
+            <option value="" disabled>Select</option>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+            <option value="Cancelled">Confirmed</option>
+        </select>
+
+        <label for="techID">Enter Technician ID:</label>
+        <input type="number" name="techID">
+
+        <button type="submit" id="bookingBtn">Create Booking</button>
+    </form>
+
+    <footer id="viewAllFooter">
+        <a href="" onclick="backToTop(event)"><h1>ROLSA TECH</h1></a>
+        <img src="../static/imgs/RolsaTechLogo.png" alt="Logo for rolsa technologies">
+    </footer>
+
+
+</body>
+</html>
